@@ -1,5 +1,7 @@
-package album;
+package com.cymbal.album;
 
+import com.cymbal.exception.BadRequest;
+import com.cymbal.exception.ResourceNotFound;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package artist;
+package com.cymbal.artist;
 
 import java.util.Objects;
 

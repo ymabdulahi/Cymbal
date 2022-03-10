@@ -1,5 +1,6 @@
-package song;
+package com.cymbal.song;
 
+import org.apache.tomcat.jni.Local;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -24,7 +25,7 @@ public class SongDataAccessService implements SongDAO{
                 FROM songs
                 LIMIT 100;
                  """;
-        return jdbcTemplate.query(sql, new SongRowMapper());
+        return jdbcTemplate.query(sql, new SongSQL());
     }
 
     @Override
@@ -34,7 +35,7 @@ public class SongDataAccessService implements SongDAO{
                 FROM songs
                 WHERE id = ?
                  """;
-        return jdbcTemplate.query(sql, new SongRowMapper(), id)
+        return jdbcTemplate.query(sql, new SongSQL(), id)
                 .stream()
                 .findFirst();
     }
@@ -46,7 +47,7 @@ public class SongDataAccessService implements SongDAO{
                 FROM songs
                 WHERE LOWER(song_name) LIKE LOWER(?)
                  """;
-        return jdbcTemplate.query(sql, new SongRowMapper(), name+'%');
+        return jdbcTemplate.query(sql, new SongSQL(), name+'%');
     }
 
     @Override
@@ -56,7 +57,7 @@ public class SongDataAccessService implements SongDAO{
                 FROM songs
                 WHERE artist_id = ?
                  """;
-        return jdbcTemplate.query(sql, new SongRowMapper(), artist_id);
+        return jdbcTemplate.query(sql, new SongSQL(), artist_id);
     }
 
     @Override
@@ -68,7 +69,7 @@ public class SongDataAccessService implements SongDAO{
                 ON artists.id = songs.artist_id
                 WHERE LOWER(artists.artist_name) = LOWER(?)
                  """;
-        return jdbcTemplate.query(sql, new SongRowMapper(), artist_name);
+        return jdbcTemplate.query(sql, new SongSQL(), artist_name);
     }
 
     @Override
@@ -78,7 +79,7 @@ public class SongDataAccessService implements SongDAO{
                 FROM songs
                 WHERE album_id = ?
                  """;
-        return jdbcTemplate.query(sql, new SongRowMapper(), album_id);
+        return jdbcTemplate.query(sql, new SongSQL(), album_id);
     }
 
     @Override
@@ -90,7 +91,7 @@ public class SongDataAccessService implements SongDAO{
                 ON albums.id = songs.album_id
                 WHERE LOWER(albums.album_name) = LOWER(?)
                  """;
-        return jdbcTemplate.query(sql, new SongRowMapper(), album_name);
+        return jdbcTemplate.query(sql, new SongSQL(), album_name);
     }
 
     @Override
@@ -100,7 +101,7 @@ public class SongDataAccessService implements SongDAO{
                 FROM songs
                 WHERE LOWER(genre) = LOWER(?)
                  """;
-        return jdbcTemplate.query(sql, new SongRowMapper(), genre);
+        return jdbcTemplate.query(sql, new SongSQL(), genre);
     }
 
     @Override
@@ -110,7 +111,7 @@ public class SongDataAccessService implements SongDAO{
                 FROM songs
                 WHERE release_date >= ? AND release_date <= ?
                  """;
-        return jdbcTemplate.query(sql, new SongRowMapper(), start_date, end_date);
+        return jdbcTemplate.query(sql, new SongSQL(), start_date, end_date);
     }
 
     @Override

@@ -1,5 +1,7 @@
-package album;
+package com.cymbal.album;
 
+import com.cymbal.song.Song;
+import com.cymbal.song.SongSQL;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -20,7 +22,7 @@ public class AlbumDataAccessService implements AlbumDAO {
                 SELECT * FROM albums
                 WHERE id = ?
                  """;
-        return jdbcTemplate.query(sql, new AlbumRowMapper(), id);
+        return jdbcTemplate.query(sql, new AlbumSQL(), id);
     };
 
     @Override
@@ -28,7 +30,7 @@ public class AlbumDataAccessService implements AlbumDAO {
         var sql = """
                 SELECT * FROM albums;
                  """;
-        return jdbcTemplate.query(sql, new AlbumRowMapper());
+        return jdbcTemplate.query(sql, new AlbumSQL());
     };
 
     @Override
@@ -38,7 +40,7 @@ public class AlbumDataAccessService implements AlbumDAO {
                 FROM albums
                 WHERE LOWER(album_name) LIKE LOWER(?)
                  """;
-        return jdbcTemplate.query(sql, new AlbumRowMapper(), name+'%');
+        return jdbcTemplate.query(sql, new AlbumSQL(), name+'%');
     }
 
     @Override
@@ -48,7 +50,7 @@ public class AlbumDataAccessService implements AlbumDAO {
                 FROM albums
                 WHERE artist_id = ?
                  """;
-        return jdbcTemplate.query(sql, new AlbumRowMapper(), artist_id);
+        return jdbcTemplate.query(sql, new AlbumSQL(), artist_id);
     }
 
     @Override
@@ -58,7 +60,7 @@ public class AlbumDataAccessService implements AlbumDAO {
                 FROM albums
                 WHERE LOWER(genre) = LOWER(?)
                  """;
-        return jdbcTemplate.query(sql, new AlbumRowMapper(), genre);
+        return jdbcTemplate.query(sql, new AlbumSQL(), genre);
     }
 
     @Override
@@ -68,7 +70,7 @@ public class AlbumDataAccessService implements AlbumDAO {
                 FROM albums
                 WHERE release_date >= ? AND release_date <= ?
                  """;
-        return jdbcTemplate.query(sql, new AlbumRowMapper(), start_date, end_date);
+        return jdbcTemplate.query(sql, new AlbumSQL(), start_date, end_date);
     }
 
     public List<Album> getAlbumsByDecade(LocalDate start_date, LocalDate end_date){
@@ -77,7 +79,7 @@ public class AlbumDataAccessService implements AlbumDAO {
                 FROM albums
                 WHERE release_date >= ? AND release_date <= ?
                  """;
-        return jdbcTemplate.query(sql, new AlbumRowMapper(), start_date, end_date);
+        return jdbcTemplate.query(sql, new AlbumSQL(), start_date, end_date);
     }
 
     @Override
@@ -89,7 +91,7 @@ public class AlbumDataAccessService implements AlbumDAO {
                 ON artists.id = albums.artist_id
                 WHERE LOWER(artists.artist_name) = LOWER(?)
                  """;
-        return jdbcTemplate.query(sql, new AlbumRowMapper(), artist_name);
+        return jdbcTemplate.query(sql, new AlbumSQL(), artist_name);
     }
 
     @Override

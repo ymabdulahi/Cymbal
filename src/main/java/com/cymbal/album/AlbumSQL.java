@@ -1,4 +1,4 @@
-package album;
+package com.cymbal.album;
 
 import org.springframework.jdbc.core.RowMapper;
 
@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
-public class AlbumRowMapper implements RowMapper<Album> {
+public class AlbumSQL implements RowMapper<Album> {
 
     @Override
     public Album mapRow(ResultSet resultSet, int i) throws SQLException {

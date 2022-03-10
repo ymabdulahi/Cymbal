@@ -1,8 +1,12 @@
-package album;
+package com.cymbal.album;
 
+import com.cymbal.song.Song;
+import com.cymbal.song.SongService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.function.ToDoubleBiFunction;
 
 @RestController
 @RequestMapping("/api/v1/albums")
@@ -30,7 +34,7 @@ public class AlbumController {
         return albumService.getAlbumByName(name);
     }
 
-    @GetMapping("/artist/{artist_id}")
+    @GetMapping("/com/cymbal/artist/{artist_id}")
     public @ResponseBody List<Album> getAlbumsByArtist(@PathVariable int artist_id){
         return albumService.getAlbumsByArtist(artist_id);
     }

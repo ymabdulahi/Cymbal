@@ -1,11 +1,15 @@
-package artist;
+package com.cymbal.artist;
 
 import org.springframework.jdbc.core.RowMapper;
 
+import com.cymbal.album.Album;
+import org.springframework.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ArtistRowMapper implements RowMapper<Artist> {
+import java.time.LocalDate;
+
+public class ArtistSQL implements RowMapper<Artist> {
     @Override
     public Artist mapRow(ResultSet resultSet, int i) throws SQLException {
         return new Artist(

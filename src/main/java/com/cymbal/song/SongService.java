@@ -1,15 +1,23 @@
-package song;
+package com.cymbal.song;
 
-import album.Album;
-import album.AlbumDAO;
-import artist.Artist;
-import artist.ArtistDAO;
+import com.cymbal.album.Album;
+import com.cymbal.album.AlbumDAO;
+import com.cymbal.album.AlbumDataAccessService;
+import com.cymbal.artist.Artist;
+import com.cymbal.artist.ArtistDAO;
+import com.cymbal.exception.*;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
+import java.util.Locale;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class SongService {

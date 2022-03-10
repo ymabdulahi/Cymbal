@@ -1,4 +1,4 @@
-package song;
+package com.cymbal.song;
 
 import org.springframework.jdbc.core.RowMapper;
 
@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
-public class SongRowMapper implements RowMapper<Song> {
+public class SongSQL implements RowMapper<Song> {
 
     @Override
     public Song mapRow(ResultSet resultSet, int i) throws SQLException {

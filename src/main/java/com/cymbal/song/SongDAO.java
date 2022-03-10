@@ -1,4 +1,4 @@
-package song;
+package com.cymbal.song;
 
 import java.time.LocalDate;
 import java.util.List;

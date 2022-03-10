@@ -1,4 +1,4 @@
-package artist;
+package com.cymbal.artist;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -18,14 +18,14 @@ public class ArtistDataAccessService implements ArtistDAO{
                 SELECT * FROM artists
                 WHERE id = ?
                  """;
-        return jdbcTemplate.query(sql, new ArtistRowMapper(), id);
+        return jdbcTemplate.query(sql, new ArtistSQL(), id);
     };
     @Override
     public List<Artist> getAllArtists(){
         var sql = """
                 SELECT * FROM artists;
                  """;
-        return jdbcTemplate.query(sql, new ArtistRowMapper());
+        return jdbcTemplate.query(sql, new ArtistSQL());
 
     };
     @Override
@@ -35,7 +35,7 @@ public class ArtistDataAccessService implements ArtistDAO{
                 FROM artists
                 WHERE LOWER(artist_name) LIKE LOWER(?)
                  """;
-        return jdbcTemplate.query(sql, new ArtistRowMapper(), name+'%');
+        return jdbcTemplate.query(sql, new ArtistSQL(), name+'%');
     }
     @Override
     public List<Artist> getArtistByNationality(String nationality){
@@ -44,7 +44,7 @@ public class ArtistDataAccessService implements ArtistDAO{
                 FROM artists
                 WHERE LOWER(nationality) LIKE LOWER(?)
                  """;
-        return jdbcTemplate.query(sql, new ArtistRowMapper(), nationality+'%');
+        return jdbcTemplate.query(sql, new ArtistSQL(), nationality+'%');
     }
     @Override
     public List<Artist> getArtistByBiggestHit(String biggest_hit){
@@ -53,7 +53,7 @@ public class ArtistDataAccessService implements ArtistDAO{
                 FROM artists
                 WHERE LOWER(biggest_hit) LIKE LOWER(?)
                  """;
-        return jdbcTemplate.query(sql, new ArtistRowMapper(), biggest_hit+'%');
+        return jdbcTemplate.query(sql, new ArtistSQL(), biggest_hit+'%');
     }
 
     @Override

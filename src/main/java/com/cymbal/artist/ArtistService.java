@@ -1,5 +1,9 @@
-package artist;
+package com.cymbal.artist;
 
+import com.cymbal.album.Album;
+import com.cymbal.album.AlbumDAO;
+import com.cymbal.exception.ResourceNotFound;
+import com.cymbal.song.Song;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,6 @@
-package album;
+package com.cymbal.album;
+
+import com.cymbal.song.Song;
 
 import java.time.LocalDate;
 import java.util.List;

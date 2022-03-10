@@ -1,4 +1,4 @@
-package song;
+package com.cymbal.song;
 
 import org.springframework.web.bind.annotation.*;
 
@@ -31,7 +31,7 @@ public class SongController {
         return songService.getSongByName(name);
     }
 
-    @GetMapping("/artist/{artist_id}")
+    @GetMapping("/com/cymbal/artist/{artist_id}")
     public @ResponseBody List<Song> getSongsByArtist(@PathVariable int artist_id){
         return songService.getSongsByArtist(artist_id);
     }
@@ -41,7 +41,7 @@ public class SongController {
         return songService.getSongsByArtistName(artist_name);
     }
 
-    @GetMapping("/album/{album_id}")
+    @GetMapping("/com/cymbal/album/{album_id}")
     public @ResponseBody List<Song> getSongsByAlbum(@PathVariable int album_id){
         return songService.getSongsByAlbum(album_id);
     }

@@ -1,8 +1,13 @@
-package artist;
+package com.cymbal.artist;
 
+import com.cymbal.album.Album;
+import com.cymbal.album.AlbumService;
+import com.cymbal.song.Song;
+import com.cymbal.song.SongService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.function.ToDoubleBiFunction;
 
 @RestController
 @RequestMapping("/api/v1/artists")
