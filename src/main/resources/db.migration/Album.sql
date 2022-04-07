@@ -1,0 +1,12 @@
+INSERT INTO albums (album_name, artist_id, genre, release_date, number_of_tracks) VALUES ('25', 1 , 'Soul', '2015-11-20', 11);
+INSERT INTO albums (album_name, artist_id, genre, release_date, number_of_tracks) VALUES ('Konvicted', 2, 'R&B', '2006-11-14', 12);
+INSERT INTO albums (album_name, artist_id, genre, release_date, number_of_tracks) VALUES ('Cant Get Enough', 3 , 'Soul', '1974-08-06', 7);
+INSERT INTO albums (album_name, artist_id, genre, release_date, number_of_tracks) VALUES ('Psychodrama', 4 , 'Hip-Hop', '2019-03-08', 11);
+INSERT INTO albums (album_name, artist_id, genre, release_date, number_of_tracks) VALUES ('Views', 5, 'Hip-Hop', '2016-04-29', 20);
+INSERT INTO albums (album_name, artist_id, genre, release_date, number_of_tracks) VALUES ('X', 6 , 'Pop', '2014-06-20', 12);
+INSERT INTO albums (album_name, artist_id, genre, release_date, number_of_tracks) VALUES ('Graduation', 7, 'Hip-Hop', '2007-09-11', 15);
+INSERT INTO albums (album_name, artist_id, genre, release_date, number_of_tracks) VALUES ('Too Hard', 8, 'Rap', '2017-11-05', 15);
+INSERT INTO albums (album_name, artist_id, genre, release_date, number_of_tracks) VALUES ('Meet the Woo 2', 9, 'Drill', '2020-02-07', 13);
+INSERT INTO albums (album_name, artist_id, genre, release_date, number_of_tracks) VALUES ('Oral Fixation', 10, 'Pop', '2005-11-28', 27);
+INSERT INTO albums (album_name, artist_id, genre, release_date, number_of_tracks) VALUES ('Get Rich or Die Tryin', 11, 'Rap', '2003-02-06', 27);
+INSERT INTO albums (album_name, artist_id, genre, release_date, number_of_tracks) VALUES ('All Eyez on Me', 12, 'Hip-Hop', '1996-02-13', 27);
